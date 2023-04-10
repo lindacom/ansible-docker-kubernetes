@@ -1,4 +1,4 @@
-Runing mysql Docker container with Anaible
+Runing mysql Docker container with Ansible
 ============================================
 
 1. Create a .yml file called mysqldocker.yml
