@@ -63,3 +63,8 @@ Files
 =====
 etc/host - contains the localhost ip address
 etc/ansible/hosts - contains the VMs IP address (used for SSH)
+
+Tutorials
+==============
+Automate Docker deployments ith Ansible - https://www.youtube.com/watch?v=CQk9AOPh5pw
+
