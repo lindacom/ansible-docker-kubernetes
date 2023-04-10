@@ -58,3 +58,8 @@ N.b you will need ansible modules for docker.
 You should get an ok success message
 4. In the terminal enter docker --version to check that it was istalled correctly
 5. Enter python3 -m pip list | grep docker
+
+Files
+=====
+etc/host - contains the localhost ip address
+etc/ansible/hosts - contains the VMs IP address (used for SSH)
