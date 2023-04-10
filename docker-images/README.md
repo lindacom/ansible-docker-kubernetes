@@ -17,7 +17,7 @@ Build Docker images with Ansible
 =========================================
 Recreate a website using a docker image from Ansible.
 
-1. In the docker-images-with-ansible directory run ansible-playbook docker-image-playbook.yml to create an image.
+1. In the Documents/docker-images-with-ansible directory run ansible-playbook docker-image-playbook.yaml to create an image.
 2. Enter docker images command to see the image in the list
 3. Run the docker image - docker run -it --rm -d -p 8081:80 --name web-server-ansible nginx-ansible-build-demo
 4. Go to localhost:8081 to see the website.
