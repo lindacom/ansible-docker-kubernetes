@@ -56,8 +56,19 @@ N.b you will need ansible modules for docker.
 2. See https://github.com/CristianLempa/boilrplates/ansible/provisioning/ubunt/install-docker.yaml
 3. run the playbook ansible-playbook -i inventory install_docker.yaml -t config --ask-pass --ask-become-pass
 You should get an ok success message
-4. In the terminal enter docker --version to check that it was istalled correctly
+4. In the terminal enter docker --version to check that it was installed correctly
 5. Enter python3 -m pip list | grep docker
+
+Create a Docker group
+============================
+Create a docker group so that you can run docker without sudo
+
+sudo group add docker 
+enter password
+sudo usermod -aG docker $USER
+logout and back in again
+
+N.b. aG means append group. $USER is the active user
 
 Files
 =====
