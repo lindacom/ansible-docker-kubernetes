@@ -36,6 +36,8 @@ Docker commands
 - docker ps -a - list of all containers
 - docker images - list of images
 - docker rmi <image id> - delete an image
+- docker logs
+- docker exec -it -  execute interactive terminal inside the container
 
 Tutorials
 =========
