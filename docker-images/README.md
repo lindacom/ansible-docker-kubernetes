@@ -32,8 +32,10 @@ Files
 
 Docker commands
 ===============
-docker ps
-docker images
+- docker ps - list of running containers
+- docker ps -a - list of all containers
+- docker images - list of images
+- docker rmi <image id> - delete an image
 
 Tutorials
 =========
