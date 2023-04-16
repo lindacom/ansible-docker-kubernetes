@@ -37,7 +37,7 @@ Docker commands
 - docker images - list of images
 - docker rmi <image id> - delete an image
 - docker logs
-- docker exec -it -  execute interactive terminal inside the container
+- docker exec -it <container id> -  execute interactive terminal inside the container
 
 Tutorials
 =========
