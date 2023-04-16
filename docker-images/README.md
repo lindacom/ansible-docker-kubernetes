@@ -37,7 +37,8 @@ Docker commands
 - docker images - list of images
 - docker rmi <image id> - delete an image
 - docker logs
-- docker exec -it <container id> -  execute interactive terminal inside the container. Follow the command with /bin/bash or /bin/sh
+- docker exec -it <container id> -  execute interactive terminal inside the container. Follow the command with /bin/bash or /bin/sh.  YOu can 
+  then enter env to see the environment variables displayed
 
 Tutorials
 =========
