@@ -1,0 +1,18 @@
+Example dockerfile
+============================
+
+N.b docker file must be called Dockerfile.  It must be based on (FROM) an image in dockerhub e.g node:13-alpine
+
+FROM node:13-alpine
+
+ENV MONGO_DB_USERNAME = admin
+    MONGO_DB_PWD = password
+    
+RUN mkdir -p /home/app
+
+COPY . /home/app
+
+CMD ["node", "server.js"]
+
+
+N.b. run command run on the container only. COPY command runs on the host
