@@ -98,4 +98,13 @@ For new master node - get new server, install all master/worker node processes, 
 
 Basic commands
 ================
-kubectl get nodes
+kubectl get nodes - lists name, status and role
+kubectl get pod
+kubectl get services
+kubectl get replicaset - replicaset manages replication of pod
+kuectl edit deployment <name>
+kubectl logs <podname>
+kubectl describepod
+kubectl exec -it <podname> --bin/bash
+kubectl delete deployment <name>
+kubctl get pod -o wide - shows more information including ip address of the pod
