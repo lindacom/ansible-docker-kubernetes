@@ -16,6 +16,41 @@ kubectl.
 
 Worker node - communicates with master node using kubelet.
 
+Kubernetes components
+====================
+N.b. every component is replicated and load balanced across nodes.
+
+1. Node and pod - Pod is an extraction of a container. A pod usually runs one appliation per pod.  Pod had it's IP (virtual)
+address which it uses to communicate. Nb. if it restarts/gets recreated it gets a new IP.  
+
+Worker node has three processes neeed to run every node - container runtime, kubelet - interacts with both the container and node.
+Kuelet starts the pod with a container inside db service, kube proxy forwards the requests.
+
+Master nodes - managing processes re done by master nodes.  There are four processes that un on every master node to control cluster state 
+and workr nodes. Api server - the client interacts with this cluster gateway acts as a gatekeeer for authentication, scheduler - decides
+which node a pod goes to and kubelet executes the request, controller manager - detects cluster state changes of crashed pod makes a request
+to scheduler then sent to kubelet to execute. etcd - key value store of cluster state so that the processes know what has changed
+
+2. Service - permanent ip address can be attached to each pod i.e. app has a service and database has a service. 
+external service opens communication for external services N.b. the domain name is not standard therefore ingress is used
+internal service e.g. used for database
+
+3. Ingress - handles every incoming request. does forwarding to service. It is replicated on each node. Ingress and service are both
+load balancers. The service forwards request to database service. 
+
+4. Configmap and secrets - configmap contains configuration for app e.g. url of database.secrets - same as configmap but used to store secret data e.g. 
+database username and password in base64 encoded format.  connect configmap and secrets to pod so data is accessible.
+
+5. volumes - attaches physical storage (from local machine, rmote or cloud) to the pod.
+
+6. Deployment and statefulset - Deployment manages a replica set which manages a pod which is an abstraction of a containter. 
+
+statefulset is for stateful apps eg. elasticsearch or databases. deployment is an abstraction on top of pods
+app is replicated to other nodes which is also connecte to the service. Service is a load balancer- forwards request to whichever node is less busy.  
+The deployment specifies how many replicas. 
+
+N.b databases can't be replicated using deployment because it has state (data) statefulset is used instead.
+
 Install Kubectl
 ===================
 See https://kubernetes.io/tasks/tools/install-kubectl. Add the Kubectl folder in environment variables.
@@ -56,6 +91,10 @@ then enter ps -ef to see the processes
 enter exit
 
 N.b if there are several containers enter -c <name>after the podname
+  
+If the whole cluster (including etcd) goes down you can use etcd snapshots in remote storage for disaster recovery.  
+  
+For new master node - get new server, install all master/worker node processes, add it to the cluster.
 
 Basic commands
 ================
